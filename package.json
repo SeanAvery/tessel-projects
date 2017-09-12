@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ambient-attx4": "^0.2.11"
+    "ambient-attx4": "^0.2.11",
+    "climate-si7020": "^0.1.1",
+    "ws": "^3.1.0"
   }
 }
