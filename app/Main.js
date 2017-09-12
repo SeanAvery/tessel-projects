@@ -4,12 +4,28 @@ import {
   VictoryLine,
   VictoryTheme
 } from 'victory'
+import ws from 'ws'
 
 export default class Main extends Component {
   constructor() {
     super()
     this.state = {
       data: []
+    }
+  }
+
+  componentDidlMount() {
+    this.socket = new ws('ws://localhost:3344')
+    this.socket.onopen = (socket) => {
+      console.log('#### Client connected to server', socket)
+    }
+    this.socket.onmessage = (e) => {
+      console.log('#### Received msg', e.data)
+      this.setState(prevState => {
+        return {
+          data: prevState.data.push(e.data)
+        }
+      })
     }
   }
 

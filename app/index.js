@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 
-import Main from './app/Main'
+import Main from './Main'
 
 render(
   <Main />,
